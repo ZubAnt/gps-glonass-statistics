@@ -14,11 +14,11 @@ def main():
     gps_psp_mod_stat = GPSpspModulationService().get_statistics()
 
     # СКО
-    # plotter.plot_sigma_x_of_gps_only(gps_narrow_band_stat, gps_freq_mod_stat, gps_psp_mod_stat)
-    # plotter.plot_sigma_y_of_gps_only(gps_narrow_band_stat, gps_freq_mod_stat, gps_psp_mod_stat)
-    # plotter.plot_sigma_z_of_gps_only(gps_narrow_band_stat, gps_freq_mod_stat, gps_psp_mod_stat)
-    # plotter.plot_sigma_lat_of_gps_only(gps_narrow_band_stat, gps_freq_mod_stat, gps_psp_mod_stat)
-    # plotter.plot_sigma_log_of_gps_only(gps_narrow_band_stat, gps_freq_mod_stat, gps_psp_mod_stat)
+    plotter.plot_sigma_x_of_gps_only(gps_narrow_band_stat, gps_freq_mod_stat, gps_psp_mod_stat)
+    plotter.plot_sigma_y_of_gps_only(gps_narrow_band_stat, gps_freq_mod_stat, gps_psp_mod_stat)
+    plotter.plot_sigma_z_of_gps_only(gps_narrow_band_stat, gps_freq_mod_stat, gps_psp_mod_stat)
+    plotter.plot_sigma_lat_of_gps_only(gps_narrow_band_stat, gps_freq_mod_stat, gps_psp_mod_stat)
+    plotter.plot_sigma_log_of_gps_only(gps_narrow_band_stat, gps_freq_mod_stat, gps_psp_mod_stat)
 
     # Математичское ожидание
     plotter.plot_math_exp_x_of_gps_only(gps_narrow_band_stat, gps_freq_mod_stat, gps_psp_mod_stat)

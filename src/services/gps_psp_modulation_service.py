@@ -11,5 +11,9 @@ class GPSpspModulationService(BaseStatisticsService):
     def _scale_power_axis(self, s: Statistics) -> None:
         scaled_power = []
         for p in s.power:
-            scaled_power.append(p - 15 - 16)
+            if p >= -10:
+                new_power = p - 28 - 16
+            else:
+                new_power = p - 25 - 16
+            scaled_power.append(new_power)
         s.power = scaled_power

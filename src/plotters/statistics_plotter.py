@@ -28,7 +28,7 @@ class StatisticsPlotter(object):
 
     def plot_sigma_x_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
         plt.plot(narrow.power, narrow.s_x, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.s_x, 'b--', label="фм помеха", linewidth=1, marker='o', markersize=3)
+        plt.plot(freq_mod.power, freq_mod.s_x, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
         plt.plot(psp_mod.power, psp_mod.s_x, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
 
         self._set_grid(plt)
@@ -43,7 +43,7 @@ class StatisticsPlotter(object):
 
     def plot_sigma_y_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
         plt.plot(narrow.power, narrow.s_y, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.s_y, 'b--', label="фм помеха", linewidth=1, marker='o', markersize=3)
+        plt.plot(freq_mod.power, freq_mod.s_y, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
         plt.plot(psp_mod.power, psp_mod.s_y, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
 
         self._set_grid(plt)
@@ -58,7 +58,7 @@ class StatisticsPlotter(object):
 
     def plot_sigma_z_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
         plt.plot(narrow.power, narrow.s_z, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.s_z, 'b--', label="фм помеха", linewidth=1, marker='o', markersize=3)
+        plt.plot(freq_mod.power, freq_mod.s_z, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
         plt.plot(psp_mod.power, psp_mod.s_z, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
 
         self._set_grid(plt)
@@ -73,7 +73,7 @@ class StatisticsPlotter(object):
 
     def plot_sigma_lat_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
         plt.plot(narrow.power, narrow.s_lat, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.s_lat, 'b--', label="фм помеха", linewidth=1, marker='o', markersize=3)
+        plt.plot(freq_mod.power, freq_mod.s_lat, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
         plt.plot(psp_mod.power, psp_mod.s_lat, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
 
         self._set_grid(plt)
@@ -88,7 +88,7 @@ class StatisticsPlotter(object):
 
     def plot_sigma_log_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
         plt.plot(narrow.power, narrow.s_long, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.s_long, 'b--', label="фм помеха", linewidth=1, marker='o', markersize=3)
+        plt.plot(freq_mod.power, freq_mod.s_long, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
         plt.plot(psp_mod.power, psp_mod.s_long, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
 
         self._set_grid(plt)
@@ -103,7 +103,7 @@ class StatisticsPlotter(object):
 
     def plot_math_exp_x_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
         plt.plot(narrow.power, narrow.m_x, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.m_x, 'b--', label="фм помеха", linewidth=1, marker='o', markersize=3)
+        plt.plot(freq_mod.power, freq_mod.m_x, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
         plt.plot(psp_mod.power, psp_mod.m_x, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
 
         self._set_grid(plt)
@@ -118,7 +118,7 @@ class StatisticsPlotter(object):
 
     def plot_math_exp_y_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
         plt.plot(narrow.power, narrow.m_y, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.m_y, 'b--', label="фм помеха", linewidth=1, marker='o', markersize=3)
+        plt.plot(freq_mod.power, freq_mod.m_y, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
         plt.plot(psp_mod.power, psp_mod.m_y, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
 
         self._set_grid(plt)
@@ -133,7 +133,7 @@ class StatisticsPlotter(object):
 
     def plot_math_exp_z_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
         plt.plot(narrow.power, narrow.m_z, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.m_z, 'b--', label="фм помеха", linewidth=1, marker='o', markersize=3)
+        plt.plot(freq_mod.power, freq_mod.m_z, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
         plt.plot(psp_mod.power, psp_mod.m_z, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
 
         self._set_grid(plt)
@@ -148,7 +148,7 @@ class StatisticsPlotter(object):
 
     def plot_math_exp_lat_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
         plt.plot(narrow.power, narrow.m_lat, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.m_lat, 'b--', label="фм помеха", linewidth=1, marker='o', markersize=3)
+        plt.plot(freq_mod.power, freq_mod.m_lat, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
         plt.plot(psp_mod.power, psp_mod.m_lat, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
 
         self._set_grid(plt)
@@ -163,7 +163,7 @@ class StatisticsPlotter(object):
 
     def plot_math_exp_long_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
         plt.plot(narrow.power, narrow.m_long, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.m_long, 'b--', label="фм помеха", linewidth=1, marker='o', markersize=3)
+        plt.plot(freq_mod.power, freq_mod.m_long, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
         plt.plot(psp_mod.power, psp_mod.m_long, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
 
         self._set_grid(plt)
