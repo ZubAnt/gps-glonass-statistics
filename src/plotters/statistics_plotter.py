@@ -7,7 +7,7 @@ from models.statistics import Statistics
 from models.window import Window
 
 plt.rcParams["font.family"] = "Times New Roman"
-plt.rcParams["font.size"] = 18
+plt.rcParams["font.size"] = 30
 
 
 class StatisticsPlotter(object):
@@ -27,14 +27,14 @@ class StatisticsPlotter(object):
         plt.show()
 
     def plot_sigma_x_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
-        plt.plot(narrow.power, narrow.s_x, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.s_x, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(psp_mod.power, psp_mod.s_x, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
+        plt.plot(narrow.power, narrow.s_x, 'r-', label="узкополосная помеха", linewidth=3, marker='o', markersize=9)
+        plt.plot(freq_mod.power, freq_mod.s_x, 'b-.', label="чм помеха", linewidth=3, marker='s', markersize=9)
+        plt.plot(psp_mod.power, psp_mod.s_x, 'g--', label="фкм помеха (ПСП)", linewidth=3, marker='^', markersize=9)
 
         self._set_grid(plt)
         self._set_x_label(plt, r'$\mathdefault{P}_{помехи}$, dBm')
-        self._set_y_label(plt, r'$\sigma_x$')
-        plt.title("Зависимость СКО координаты X от уровня мощности помехи в тракте")
+        self._set_y_label(plt, r'$\sigma_x, м^{2}$')
+#         # plt.title("Зависимость СКО координаты X от уровня мощности помехи в тракте")
         plt.legend()
 
         self._save("gps_only_sigma_x.png")
@@ -42,14 +42,14 @@ class StatisticsPlotter(object):
         plt.show()
 
     def plot_sigma_y_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
-        plt.plot(narrow.power, narrow.s_y, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.s_y, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(psp_mod.power, psp_mod.s_y, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
+        plt.plot(narrow.power, narrow.s_y, 'r-', label="узкополосная помеха", linewidth=3, marker='o', markersize=9)
+        plt.plot(freq_mod.power, freq_mod.s_y, 'b-.', label="чм помеха", linewidth=3, marker='s', markersize=9)
+        plt.plot(psp_mod.power, psp_mod.s_y, 'g--', label="фкм помеха (ПСП)", linewidth=3, marker='^', markersize=9)
 
         self._set_grid(plt)
         self._set_x_label(plt, r'$\mathdefault{P}_{помехи}$, dBm')
-        self._set_y_label(plt, r'$\sigma_y$')
-        plt.title("Зависимость СКО координаты Y от уровня мощности помехи в тракте")
+        self._set_y_label(plt, r'$\sigma_y, м^{2}$')
+        # plt.title("Зависимость СКО координаты Y от уровня мощности помехи в тракте")
         plt.legend()
 
         self._save("gps_only_sigma_y.png")
@@ -57,14 +57,14 @@ class StatisticsPlotter(object):
         plt.show()
 
     def plot_sigma_z_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
-        plt.plot(narrow.power, narrow.s_z, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.s_z, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(psp_mod.power, psp_mod.s_z, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
+        plt.plot(narrow.power, narrow.s_z, 'r-', label="узкополосная помеха", linewidth=3, marker='o', markersize=9)
+        plt.plot(freq_mod.power, freq_mod.s_z, 'b-.', label="чм помеха", linewidth=3, marker='s', markersize=9)
+        plt.plot(psp_mod.power, psp_mod.s_z, 'g--', label="фкм помеха (ПСП)", linewidth=3, marker='^', markersize=9)
 
         self._set_grid(plt)
         self._set_x_label(plt, r'$\mathdefault{P}_{помехи}$, dBm')
-        self._set_y_label(plt, r'$\sigma_z$')
-        plt.title("Зависимость СКО координаты Z от уровня мощности помехи в тракте")
+        self._set_y_label(plt, r'$\sigma_z, м^{2}$')
+        # plt.title("Зависимость СКО координаты Z от уровня мощности помехи в тракте")
         plt.legend()
 
         self._save("gps_only_sigma_z.png")
@@ -72,14 +72,14 @@ class StatisticsPlotter(object):
         plt.show()
 
     def plot_sigma_lat_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
-        plt.plot(narrow.power, narrow.s_lat, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.s_lat, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(psp_mod.power, psp_mod.s_lat, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
+        plt.plot(narrow.power, narrow.s_lat, 'r-', label="узкополосная помеха", linewidth=3, marker='o', markersize=9)
+        plt.plot(freq_mod.power, freq_mod.s_lat, 'b-.', label="чм помеха", linewidth=3, marker='s', markersize=9)
+        plt.plot(psp_mod.power, psp_mod.s_lat, 'g--', label="фкм помеха (ПСП)", linewidth=3, marker='^', markersize=9)
 
         self._set_grid(plt)
         self._set_x_label(plt, r'$\mathdefault{P}_{помехи}$, dBm')
-        self._set_y_label(plt, r'$\sigma_{latitude}$')
-        plt.title("Зависимость СКО широты от уровня мощности помехи в тракте")
+        self._set_y_label(plt, r'$\sigma_{latitude}, c^{2}$')
+        # plt.title("Зависимость СКО широты от уровня мощности помехи в тракте")
         plt.legend()
 
         self._save("gps_only_sigma_lat.png")
@@ -87,14 +87,14 @@ class StatisticsPlotter(object):
         plt.show()
 
     def plot_sigma_log_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
-        plt.plot(narrow.power, narrow.s_long, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.s_long, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(psp_mod.power, psp_mod.s_long, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
+        plt.plot(narrow.power, narrow.s_long, 'r-', label="узкополосная помеха", linewidth=3, marker='o', markersize=9)
+        plt.plot(freq_mod.power, freq_mod.s_long, 'b-.', label="чм помеха", linewidth=3, marker='s', markersize=9)
+        plt.plot(psp_mod.power, psp_mod.s_long, 'g--', label="фкм помеха (ПСП)", linewidth=3, marker='^', markersize=9)
 
         self._set_grid(plt)
         self._set_x_label(plt, r'$\mathdefault{P}_{помехи}$, dBm')
-        self._set_y_label(plt, r'$\sigma_{longitude}$')
-        plt.title("Зависимость СКО долготы от уровня мощности помехи в тракте")
+        self._set_y_label(plt, r'$\sigma_{longitude}, c^{2}$')
+        # plt.title("Зависимость СКО долготы от уровня мощности помехи в тракте")
         plt.legend()
 
         self._save("gps_only_sigma_long.png")
@@ -102,14 +102,14 @@ class StatisticsPlotter(object):
         plt.show()
 
     def plot_math_exp_x_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
-        plt.plot(narrow.power, narrow.m_x, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.m_x, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(psp_mod.power, psp_mod.m_x, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
+        plt.plot(narrow.power, narrow.m_x, 'r-', label="узкополосная помеха", linewidth=3, marker='o', markersize=9)
+        plt.plot(freq_mod.power, freq_mod.m_x, 'b-.', label="чм помеха", linewidth=3, marker='s', markersize=9)
+        plt.plot(psp_mod.power, psp_mod.m_x, 'g--', label="фкм помеха (ПСП)", linewidth=3, marker='^', markersize=9)
 
         self._set_grid(plt)
         self._set_x_label(plt, r'$\mathdefault{P}_{помехи}$, dBm')
         self._set_y_label(plt, r'$\mathdefault{m}_{x}$, м')
-        plt.title("Зависимость мат. ожидания координаты X от уровня мощности помехи в тракте")
+        # plt.title("Зависимость мат. ожидания координаты X от уровня мощности помехи в тракте")
         plt.legend()
 
         self._save("gps_only_math_exp_x.png")
@@ -117,14 +117,14 @@ class StatisticsPlotter(object):
         plt.show()
 
     def plot_math_exp_y_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
-        plt.plot(narrow.power, narrow.m_y, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.m_y, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(psp_mod.power, psp_mod.m_y, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
+        plt.plot(narrow.power, narrow.m_y, 'r-', label="узкополосная помеха", linewidth=3, marker='o', markersize=9)
+        plt.plot(freq_mod.power, freq_mod.m_y, 'b-.', label="чм помеха", linewidth=3, marker='s', markersize=9)
+        plt.plot(psp_mod.power, psp_mod.m_y, 'g--', label="фкм помеха (ПСП)", linewidth=3, marker='^', markersize=9)
 
         self._set_grid(plt)
         self._set_x_label(plt, r'$\mathdefault{P}_{помехи}$, dBm')
         self._set_y_label(plt, r'$\mathdefault{m}_{y}$, м')
-        plt.title("Зависимость мат. ожидания координаты Y от уровня мощности помехи в тракте")
+        # plt.title("Зависимость мат. ожидания координаты Y от уровня мощности помехи в тракте")
         plt.legend()
 
         self._save("gps_only_math_exp_y.png")
@@ -132,14 +132,14 @@ class StatisticsPlotter(object):
         plt.show()
 
     def plot_math_exp_z_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
-        plt.plot(narrow.power, narrow.m_z, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.m_z, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(psp_mod.power, psp_mod.m_z, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
+        plt.plot(narrow.power, narrow.m_z, 'r-', label="узкополосная помеха", linewidth=3, marker='o', markersize=9)
+        plt.plot(freq_mod.power, freq_mod.m_z, 'b-.', label="чм помеха", linewidth=3, marker='s', markersize=9)
+        plt.plot(psp_mod.power, psp_mod.m_z, 'g--', label="фкм помеха (ПСП)", linewidth=3, marker='^', markersize=9)
 
         self._set_grid(plt)
         self._set_x_label(plt, r'$\mathdefault{P}_{помехи}$, dBm')
         self._set_y_label(plt, r'$\mathdefault{m}_{z}$, м')
-        plt.title("Зависимость мат. ожидания координаты Z от уровня мощности помехи в тракте")
+        # plt.title("Зависимость мат. ожидания координаты Z от уровня мощности помехи в тракте")
         plt.legend()
 
         self._save("gps_only_math_exp_z.png")
@@ -147,14 +147,14 @@ class StatisticsPlotter(object):
         plt.show()
 
     def plot_math_exp_lat_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
-        plt.plot(narrow.power, narrow.m_lat, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.m_lat, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(psp_mod.power, psp_mod.m_lat, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
+        plt.plot(narrow.power, narrow.m_lat, 'r-', label="узкополосная помеха", linewidth=3, marker='o', markersize=9)
+        plt.plot(freq_mod.power, freq_mod.m_lat, 'b-.', label="чм помеха", linewidth=3, marker='s', markersize=9)
+        plt.plot(psp_mod.power, psp_mod.m_lat, 'g--', label="фкм помеха (ПСП)", linewidth=3, marker='^', markersize=9)
 
         self._set_grid(plt)
         self._set_x_label(plt, r'$\mathdefault{P}_{помехи}$, dBm')
-        self._set_y_label(plt, r'$\mathdefault{m}_{latitude}$, м')
-        plt.title("Зависимость мат. ожидания широты от уровня мощности помехи в тракте")
+        self._set_y_label(plt, r'$\mathdefault{m}_{latitude}$, c')
+        # plt.title("Зависимость мат. ожидания широты от уровня мощности помехи в тракте")
         plt.legend()
 
         self._save("gps_only_math_exp_lat.png")
@@ -162,14 +162,14 @@ class StatisticsPlotter(object):
         plt.show()
 
     def plot_math_exp_long_of_gps_only(self, narrow: Statistics, freq_mod: Statistics, psp_mod: Statistics) -> None:
-        plt.plot(narrow.power, narrow.m_long, 'r--', label="узкополосная помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(freq_mod.power, freq_mod.m_long, 'b--', label="чм помеха", linewidth=1, marker='o', markersize=3)
-        plt.plot(psp_mod.power, psp_mod.m_long, 'g--', label="фкм помеха (ПСП)", linewidth=1, marker='o', markersize=3)
+        plt.plot(narrow.power, narrow.m_long, 'r-', label="узкополосная помеха", linewidth=3, marker='o', markersize=9)
+        plt.plot(freq_mod.power, freq_mod.m_long, 'b-.', label="чм помеха", linewidth=3, marker='s', markersize=9)
+        plt.plot(psp_mod.power, psp_mod.m_long, 'g--', label="фкм помеха (ПСП)", linewidth=3, marker='^', markersize=9)
 
         self._set_grid(plt)
         self._set_x_label(plt, r'$\mathdefault{P}_{помехи}$, dBm')
-        self._set_y_label(plt, r'$\mathdefault{m}_{longitude}$, м')
-        plt.title("Зависимость мат. ожидания долготы от уровня мощности помехи в тракте")
+        self._set_y_label(plt, r'$\mathdefault{m}_{longitude}$, c')
+        # plt.title("Зависимость мат. ожидания долготы от уровня мощности помехи в тракте")
         plt.legend()
 
         self._save("gps_only_math_exp_long.png")
@@ -182,11 +182,11 @@ class StatisticsPlotter(object):
 
     @classmethod
     def _set_x_label(cls, p: plt, label: str):
-        p.xlabel(label, fontsize=18)
+        p.xlabel(label, fontsize=36)
 
     @classmethod
     def _set_y_label(cls, p: plt, label: str):
-        p.ylabel(label, fontsize=18)
+        p.ylabel(label, fontsize=36)
 
     def _save(self, filename: str) -> None:
         fig = matplotlib.pyplot.gcf()
