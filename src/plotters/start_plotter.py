@@ -26,16 +26,6 @@ class StartPlotter(object):
 
     def plot(self):
         plt.figure(1)
-        # arr_of_arr = [[i for i in range(10)],
-        #               [[i for i in range(5)],
-        #                [i for i in range(8)]]]
-        # plt.hist(arr_of_arr, facecolor='red')
-        # self._set_grid(plt)
-        # self._set_x_label(plt, r'$\mathdefault{P}_{помехи}$, dBm')
-        # self._save("cool_start.png")
-        # plt.show()
-        # close('all')
-
         x = np.arange(8)
         self._set_grid(plt)
         self._set_y_label(plt, r'$\mathdefault{t}_{хол}$, c')
@@ -50,6 +40,23 @@ class StartPlotter(object):
                             'ГЛОНАСС + ФКМ'], rotation='45')
         plt.subplots_adjust(bottom=0.3)
         self._save("cool_start.png")
+        # plt.show()
+        close('all')
+
+    def plot_js(self):
+        plt.figure(1)
+        x = np.arange(6)
+        self._set_grid(plt)
+        self._set_y_label(plt, r'$\mathdefault{t}_{хол}$, c')
+        plt.bar(x, height=[35, 30, 24, 40, 35, 27], capsize=10)
+        plt.xticks(x + 0.0, ['GPS + УП',
+                            'GPS + ЧМ',
+                            'GPS + ФКМ',
+                            'ГЛОНАСС + УП',
+                            'ГЛОНАСС + ЧМ',
+                            'ГЛОНАСС + ФКМ'], rotation='45')
+        plt.subplots_adjust(bottom=0.3)
+        self._save("js.png")
         # plt.show()
         close('all')
 

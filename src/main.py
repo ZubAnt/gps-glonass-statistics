@@ -55,6 +55,7 @@ def main(gps: bool = False, glonass: bool = False, start: bool = False):
     if start:
         plotter = StartPlotter()
         plotter.plot()
+        plotter.plot_js()
 
 if __name__ == "__main__":
-    main(gps=True, glonass=True, start=False)
+    main(gps=False, glonass=False, start=True)
