@@ -1,4 +1,5 @@
 from models.statistics import Statistics
+from plotters.start_plotter import StartPlotter
 from plotters.statistics_glonass_plotter import StatisticsGlonassPlotter
 from plotters.statistics_plotter import StatisticsPlotter
 from services.glonass_frequence_modulation_service import GlonassFrequenceModulationService
@@ -9,9 +10,7 @@ from services.gps_narrow_band_service import GPSNarrowBandService
 from services.gps_psp_modulation_service import GPSpspModulationService
 
 
-def main(gps: bool = False, glonass: bool = False):
-
-
+def main(gps: bool = False, glonass: bool = False, start: bool = False):
 
     if gps:
         plotter = StatisticsPlotter()
@@ -53,6 +52,9 @@ def main(gps: bool = False, glonass: bool = False):
         plotter.plot_sigma_y_of_glonass_only(glonass_narrow_band_stat, glonass_freq_mod_stat, glonass_psp_mod_stat)
         plotter.plot_sigma_z_of_glonass_only(glonass_narrow_band_stat, glonass_freq_mod_stat, glonass_psp_mod_stat)
 
+    if start:
+        plotter = StartPlotter()
+        plotter.plot()
 
 if __name__ == "__main__":
-    main(glonass=True)
+    main(start=True)
