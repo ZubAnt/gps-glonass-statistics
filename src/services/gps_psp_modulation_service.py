@@ -12,7 +12,7 @@ class GPSpspModulationService(BaseStatisticsService):
         scaled_power = []
         for p in s.power:
             if p >= -10:
-                new_power = p - 10 - 30 - 16 - 2
+                new_power = p - 10 - 30 - 16 - 4
             else:
                 new_power = p - 10 - 30 - 16
             scaled_power.append(new_power)

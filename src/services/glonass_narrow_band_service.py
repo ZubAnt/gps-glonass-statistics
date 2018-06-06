@@ -16,5 +16,5 @@ class GlonassNarrowBandService(BaseStatisticsService):
     def _scale_power_axis(self, s: Statistics) -> None:
         scaled_power = []
         for p in s.power:
-            scaled_power.append(p - 16 - 15)
+            scaled_power.append(p - 15 - 15)
         s.power = scaled_power

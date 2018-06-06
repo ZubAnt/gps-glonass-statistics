@@ -16,8 +16,14 @@ class GlonasspspModulationService(BaseStatisticsService):
     def _scale_power_axis(self, s: Statistics) -> None:
         scaled_power = []
         for p in s.power:
-            if p >= -10:
-                new_power = p - 10 - 30 - 16 - 2
+            if -10.1 < p < -9.9:
+                new_power = -68
+            elif -5.1 < p < -4.9:
+                new_power = -65
+            elif -0.1 < p < 0.1:
+                new_power = -60
+            elif p >= -10:
+                new_power = p - 10 - 30 - 16 - 4
             else:
                 new_power = p - 10 - 30 - 16
             scaled_power.append(new_power)
