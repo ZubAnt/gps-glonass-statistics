@@ -47,7 +47,7 @@ class StartPlotter(object):
         plt.figure(1)
         x = np.arange(6)
         self._set_grid(plt)
-        self._set_y_label(plt, r'$\mathdefault{t}_{хол}$, c')
+        self._set_y_label(plt, 'J/S, дБ')
         plt.bar(x, height=[35, 30, 24, 40, 35, 27], capsize=10)
         plt.xticks(x + 0.0, ['GPS + УП',
                             'GPS + ЧМ',
