@@ -2,11 +2,16 @@ from models.statistics import Statistics
 from services.base_statistics_service import BaseStatisticsService
 
 
-class GPSpspModulationService(BaseStatisticsService):
+class GlonasspspModulationService(BaseStatisticsService):
 
     def __init__(self) -> None:
-        file = r'../screenshots/gps-psp/statistics.csv'
+        file = r'../screenshots/glonass/glonass-psp/statistics_fkm.csv'
         super().__init__(file)
+
+    def get_statistics(self) -> Statistics:
+        s = super().get_statistics()
+        # s.add_random()
+        return s
 
     def _scale_power_axis(self, s: Statistics) -> None:
         scaled_power = []

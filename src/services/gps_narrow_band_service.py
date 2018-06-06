@@ -11,5 +11,5 @@ class GPSNarrowBandService(BaseStatisticsService):
     def _scale_power_axis(self, s: Statistics) -> None:
         scaled_power = []
         for p in s.power:
-            scaled_power.append(p - 16)
+            scaled_power.append(p - 16 - 15)
         s.power = scaled_power

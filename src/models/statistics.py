@@ -1,3 +1,4 @@
+import random
 from typing import List
 
 
@@ -93,3 +94,52 @@ class Statistics(object):
     @power.setter
     def power(self, value):
         self._power = value
+
+    def add_random(self):
+        for idx in range(1, len(self.power)):
+            self._m_lat[idx] = self._get_random(self._m_lat[idx - 1], self._m_lat[idx])
+            self._m_long[idx] = self._get_random(self._m_long[idx - 1], self._m_long[idx])
+            self._m_height[idx] = self._get_random(self._m_height[idx - 1], self._m_height[idx])
+            self._m_x[idx] = self._get_random(self._m_x[idx - 1], self._m_x[idx])
+            self._m_y[idx] = self._get_random(self._m_y[idx - 1], self._m_y[idx])
+            self._m_z[idx] = self._get_random(self._m_z[idx - 1], self._m_z[idx])
+            self._s_lat[idx] = self._get_random(self._s_lat[idx - 1], self._s_lat[idx])
+            self._s_long[idx] = self._get_random(self._s_long[idx - 1], self._s_long[idx])
+            self._s_height[idx] = self._get_random(self._s_height[idx - 1], self._s_height[idx])
+            self._s_x[idx] = self._get_random(self._s_x[idx - 1], self._s_x[idx])
+            self._s_y[idx] = self._get_random(self._s_y[idx - 1], self._s_y[idx])
+            self._s_z[idx] = self._get_random(self._s_z[idx - 1], self._s_z[idx])
+
+    @staticmethod
+    def _get_random(prev_val: float, next_val: float) -> float:
+        delta = next_val - prev_val
+
+        if abs(delta) <= 0.0001:
+            add_delta = random.uniform(-0.0001, 0.0001)
+        elif abs(delta) <= 0.001:
+            add_delta = random.uniform(-0.001, 0.001)
+        elif abs(delta) <= 0.01:
+            add_delta = random.uniform(-0.01, 0.01)
+        elif abs(delta) <= 0.1:
+            add_delta = random.uniform(-0.05, 0.05)
+        elif abs(delta) <= 1:
+            add_delta = random.uniform(-0.2, 0.2)
+        elif abs(delta) <= 1.5:
+            add_delta = random.uniform(-0.5, 0.5)
+        elif abs(delta) <= 2:
+            add_delta = random.uniform(-0.8, 0.8)
+        elif abs(delta) <= 3:
+            add_delta = random.uniform(-1, 1)
+        elif abs(delta) <= 3.5:
+            add_delta = random.uniform(-1.5, 1.5)
+        elif abs(delta) <= 4:
+            add_delta = random.uniform(-2, 2)
+        else:
+            add_delta = random.uniform(-3, 3)
+
+        if next_val + add_delta < 0:
+            delta_zero = abs(next_val)
+            rand_delta_zero = random.uniform(0.0, delta_zero)
+            return rand_delta_zero
+
+        return next_val + add_delta
