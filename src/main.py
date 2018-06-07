@@ -58,4 +58,4 @@ def main(gps: bool = False, glonass: bool = False, start: bool = False):
         plotter.plot_js()
 
 if __name__ == "__main__":
-    main(gps=False, glonass=False, start=True)
+    main(gps=False, glonass=True, start=False)
